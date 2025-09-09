@@ -23,6 +23,7 @@ function Login(props) {
             let user = resp[0];
             if (user.password === password) {
               toast.success("Login success");
+              sessionStorage.setItem("username", username);
               setTimeout(() => {
                 setIsLoginSuccess(true);
               }, 1000);
