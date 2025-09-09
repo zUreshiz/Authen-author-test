@@ -24,6 +24,8 @@ function Login(props) {
             if (user.password === password) {
               toast.success("Login success");
               sessionStorage.setItem("username", username);
+              let UserInfo = { username: user.username, role: user.role };
+              sessionStorage.setItem("user", JSON.stringify(UserInfo));
               setTimeout(() => {
                 setIsLoginSuccess(true);
               }, 1000);
