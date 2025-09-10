@@ -11,6 +11,7 @@ import Admin from "./Admin.jsx";
 import AccessDenied from "./AccessDenied.jsx";
 import ProtectedRoute from "./ProtectedRoute.jsx";
 import ManagedProduct from "./ManagedProduct.jsx";
+import ManagedCustomer from "./ManagedCustomer.jsx";
 
 let user =
   sessionStorage.getItem("user") != null
@@ -18,7 +19,6 @@ let user =
     : "";
 let role = user.role;
 let accessAdminRoles = ["admin", "employee"];
-let accessProfileRoles = ["user"];
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -39,6 +39,7 @@ createRoot(document.getElementById("root")).render(
           }>
           <Route index element={<Admin />} />
           <Route path="product" element={<ManagedProduct />} />
+          <Route path="customer" element={<ManagedCustomer />} />
         </Route>
       </Routes>
     </BrowserRouter>
